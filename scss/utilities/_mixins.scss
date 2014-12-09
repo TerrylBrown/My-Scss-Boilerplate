@@ -1,0 +1,44 @@
+// *************************************************
+// Mixins
+// *************************************************
+
+// state color mixin for maps
+@mixin bg-states($map) {
+	@each $state, $bgcolor in $map {
+		&--#{$state} {
+			background : $bgcolor;
+		}
+	}
+}
+
+// rem font-size with px fallback
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: remCalc($size);
+}
+
+// border radius mixin
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// animate 
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+      -ms-animation: #{$str};
+        -o-animation: #{$str};
+          animation: #{$str};      
+}
+
+// transition 
+@mixin transition($args...) {
+  -webkit-transition: $args;
+    -moz-transition: $args;
+      -ms-transition: $args;
+        -o-transition: $args;
+          transition: $args;
+}
